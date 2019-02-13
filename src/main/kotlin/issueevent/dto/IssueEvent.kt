@@ -13,5 +13,7 @@ data class Event(
 data class Issue(
     @JsonProperty("id", required = true) val id: Int,
     @JsonProperty("title", required = true) val title: String,
-    @JsonProperty("state", required = true) val state : String
+    @JsonProperty("state", required = true) val state : String,
+    @JsonProperty("created_at", required = true) val createdAt: String,
+    @JsonProperty("updated_at", required = true) val updated : String
 )

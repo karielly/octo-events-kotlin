@@ -1,0 +1,7 @@
+{
+  "action": "opened",
+  "issued": {
+    "id": "987654321",
+    "title": "This is new issue api"
+  }
+}

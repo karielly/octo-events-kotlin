@@ -9,6 +9,8 @@ class IssueEntity(id: EntityID<Int>) : IntEntity(id) {
 
     var title by IssueTable.title
     var state by IssueTable.state
+    var createdAt by IssueTable.createdAt
+    var updated by IssueTable.updateddAt
 }
 
 class EventEntity(id: EntityID<Int>) : IntEntity(id) {
@@ -17,6 +19,5 @@ class EventEntity(id: EntityID<Int>) : IntEntity(id) {
 
     var action by EventTable.action
     var createdAt by EventTable.createdAt
-    var updated by EventTable.updateddAt
     var issue by IssueEntity referencedOn EventTable.issueId
 }

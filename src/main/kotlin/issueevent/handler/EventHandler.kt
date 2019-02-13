@@ -13,10 +13,8 @@ object EventHandler : KoinComponent {
     fun createIssue(ctx: Context) {
         try {
             val event = ctx.bodyAsClass(Event::class.java)
-            when(eventService.save(event)) {
-                true -> ctx.status(201).json(mapOf("message" to "event saved"))
-                else -> throw RuntimeException()
-            }
+            eventService.save(event)
+            ctx.status(201).json(mapOf("message" to "event saved"))
         } catch (e: Exception) {
             ctx.status(500).json(mapOf("message" to "There was an error saving the event"))
         }
