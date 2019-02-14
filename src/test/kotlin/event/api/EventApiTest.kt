@@ -7,15 +7,19 @@ import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import java.util.Properties
 
 class EventApiTest {
 
     lateinit var main: Javalin
-    private var baseUri = "http://localhost:7000"
+    private var baseUri = "http://localhost:"
+    private var properties: Properties = Properties()
 
     @BeforeEach
     fun setUp() {
         main = Main().start()
+        properties.load(javaClass.getResourceAsStream(("/application.conf")))
+        baseUri += properties.getProperty("javalin.port")
     }
 
     @AfterEach

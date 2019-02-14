@@ -3,6 +3,8 @@
   "issue": {
     "id": "987654321",
     "title": "This is new issue api",
-    "state": "open"
+    "state": "open",
+    "created_at":  "2019-02-12T10:00:00",
+    "updated_at": "2019-02-12T10:00:00"
   }
 }

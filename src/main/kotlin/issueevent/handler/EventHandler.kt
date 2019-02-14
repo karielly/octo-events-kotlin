@@ -30,7 +30,4 @@ object EventHandler : KoinComponent {
         }
     }
 
-    fun helloWorld(ctx: Context) {
-        ctx.json("Hello world")
-    }
 }

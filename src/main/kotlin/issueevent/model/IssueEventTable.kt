@@ -8,7 +8,7 @@ object IssueTable : IdTable<Int>("public.issue") {
     val title = varchar("title", 200)
     val state = varchar("state", 50)
     val createdAt = IssueTable.datetime("created_at")
-    val updateddAt = IssueTable.datetime("updated_at")
+    val updatedAt = IssueTable.datetime("updated_at")
 }
 
 object EventTable : IntIdTable("public.event") {

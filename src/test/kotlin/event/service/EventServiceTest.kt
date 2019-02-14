@@ -6,10 +6,12 @@ import issueevent.dto.Issue
 import issueevent.repository.EventRepositoryImp
 import issueevent.service.EventService
 import org.jetbrains.exposed.sql.Database
+import org.junit.FixMethodOrder
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.junit.runners.MethodSorters
 import org.koin.standalone.StandAloneContext
 import org.koin.standalone.get
 import org.koin.standalone.getProperty
@@ -17,6 +19,7 @@ import org.koin.test.KoinTest
 import org.koin.test.declareMock
 import java.util.*
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 class EventServiceTest : KoinTest {
 
     private lateinit var eventRequest: Event
@@ -56,7 +59,7 @@ class EventServiceTest : KoinTest {
     }
 
     @Test
-    fun `Create event successfully`() {
+    fun `Create 'event' successfully`() {
         val eventService = get<EventService>()
         val expected = Event(
             "Edited",
@@ -72,7 +75,7 @@ class EventServiceTest : KoinTest {
     }
 
     @Test
-    fun `Get event by issue with sucess`() {
+    fun `Get 'event' by issue with sucess`() {
         val eventService = get<EventService>()
         val expected = listOf(Event(
             "Edited",

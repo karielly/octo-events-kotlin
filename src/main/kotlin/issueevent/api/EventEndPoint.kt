@@ -12,8 +12,6 @@ class EventEndPoint : EndpointGroup {
         path("/issues") {
             get("/:id/events", EventHandler::getEventByIssue)
         }
-
-        get("/hello", EventHandler::helloWorld)
     }
 
 }

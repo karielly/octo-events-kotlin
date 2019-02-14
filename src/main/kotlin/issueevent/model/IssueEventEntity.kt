@@ -10,7 +10,7 @@ class IssueEntity(id: EntityID<Int>) : IntEntity(id) {
     var title by IssueTable.title
     var state by IssueTable.state
     var createdAt by IssueTable.createdAt
-    var updated by IssueTable.updateddAt
+    var updated by IssueTable.updatedAt
 }
 
 class EventEntity(id: EntityID<Int>) : IntEntity(id) {
